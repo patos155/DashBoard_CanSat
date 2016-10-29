@@ -1,6 +1,7 @@
 //Creado por el equipo de Robótica del C.E.T.i.s. 155 
 // url: https://github.com/patos155
 // Asesorados por https://github.com/gerghas
+// Trabajando en la wiki
 
 import googlemapper.*;
 import controlP5.*;
@@ -19,5 +20,6 @@ int anchoMapa = 900;
 int altoMapa = 600;
 
 void setup(){
-  size(1000,600);// creamos ventana de 700 por 400 pixeles
+ 
+ size(1000,600);// creamos ventana de 700 por 400 pixeles
 }
