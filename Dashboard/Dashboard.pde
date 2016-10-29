@@ -2,6 +2,7 @@
 // url: https://github.com/patos155
 // Asesorados por https://github.com/gerghas
 
+//Librerías
 import googlemapper.*;
 import controlP5.*;
 import processing.serial.*;
@@ -9,13 +10,15 @@ import processing.serial.*;
 ControlP5 cp5;
 PImage mapa;
 GoogleMapper gMapper;
+
 //imagen 
 PImage satelite;// define el tipo de la variable y el nombre
 /*Para utilizar una imagen es importante subir el archivo a processing
-Seleccionar "sketch"
-Despues en "añadir archivo"
-Seleccionar la imagen a utilizar
+ - Seleccionar "sketch"
+ - Despues en "añadir archivo"
+ - Seleccionar la imagen a utilizar
 */
+
 // Implementación del mapa
 float mapCenterLat = 21.8857347;
 float mapCenterLon = -102.2912996;
@@ -25,7 +28,7 @@ int anchoMapa = 900;
 int altoMapa = 600;
 
 void setup(){
-  size(1000,600);// creamos ventana de 700 por 400 
+  size(1000,600);// Definimos el tamaño de la ventana. 
     satelite=loadImage("satelite_.png");//se Carga la imagen ("nombre de la imagen y su formato")
 }
 
