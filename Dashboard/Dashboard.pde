@@ -26,7 +26,7 @@ int altoMapa = 600;
 
 void setup(){
   size(1000,600);// creamos ventana de 700 por 400 
-    satelite=loadImage("satelite_.png");//se varga la imagen ("nombre de la imagen y su formato")
+    satelite=loadImage("satelite_.png");//se Carga la imagen ("nombre de la imagen y su formato")
 }
 
 void draw(){
