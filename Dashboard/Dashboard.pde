@@ -98,8 +98,13 @@ fill(#030303);//color del texto
    text(valor, 350, 560);//variable de temperatura y posicion
    text("ºC",370,560);//texto y posicion
     
-   //Escribimos los datos de la temperatura con el tiempo (h/m/s) en el archivo de texto
+   
+      //Escribimos los datos de la temperatura con el tiempo (h/m/s) en el archivo de texto
    output.print(valor + " ºC     ");
+   output.print(hour( )+":");
+   output.print(minute( )+":");
+   output.println(second( ));
+   output.println("");
    
     
   //Esfera color visualización temperatura
