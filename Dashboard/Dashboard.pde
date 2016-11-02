@@ -44,7 +44,38 @@ float CanSatLongitud;
 FloatList coordenadasX;
 FloatList coordenadasY;
 
+
+//temperatura
+ 
+PrintWriter output;  //Para crear el archivo de texto donde guardar los datos
+ 
+int rquad=40; //Radio del quadrado
+int xquad=200;  //Posición X de rect
+int yquad=200;  //Posición Y de rect
+boolean overRect = false; //Estado del mouse si está encima de rect o no
+ 
+//Colores del botón
+int red=100;
+int green=100;
+int blue=100;
+ 
+boolean status=false; //Estado del color de rect
+//String texto="LED OFF";//Texto del status inicial del LED
+ 
+int xlogo=400;//Posición X de la imagen
+int ylogo=50;//Posición Y de la imagen
+ 
+int valor;//Valor de la temperatura
+ 
+//Colores esfera temperatura
+float rojo;
+float verde;
+float azul;
+//fin temperatura
+ 
+ 
 void setup(){
+    output = createWriter("temperatura_datos.txt"); //Creamos el archivo de texto, que es guardado en la carpeta del programa
   size(1000,600);// Definimos el tamaño de la ventana. 
   b = loadFont("Arial-BoldMT-48.vlw");//definimos tipo de letra para la brujula
   satelite=loadImage("satelite_.png");//se Carga la imagen ("nombre de la imagen y su formato")
@@ -76,6 +107,29 @@ longitud = map(CanSatLongitud, minLongitudCanSatX, maxLongitudCanSatX, 0, anchoM
 
 coordenadasX.append(longitud);
 coordenadasY.append(latitud);
+
+//inicia proceso de tempearatura----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+textSize(24);//tamaño del texto
+fill(#030303);//color del texto
+   text("Temperatura =",250,560);//texto y posicion
+   text(valor, 350, 560);//variable de temperatura y posicion
+   text("ºC",370,560);//texto y posicion
+    
+   //Escribimos los datos de la temperatura con el tiempo (h/m/s) en el archivo de texto
+   output.print(valor + " ºC     ");
+   
+    
+  //Esfera color visualización temperatura
+  float temp = map (valor, 15,32, 0, 255);//Escalamos la temperatura donde maximo sea 32ºC y mínimo 15ºC
+  rojo=temp;
+  verde=temp*-1 + 255;
+  azul=temp*-1 + 255;
+  //Dibujamos una esfera para colorear la temperatura
+  noStroke();
+  fill(rojo,verde,azul);
+  ellipseMode(CENTER);
+  ellipse(400,552,20,20);
+  //termina proceso de temperatura---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //iniciamos proceso de brujula ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //while (myPort.available() > 0) {
   //  myString = myPort.readStringUntil(lf);
