@@ -48,24 +48,7 @@ FloatList coordenadasY;
 //temperatura
  
 PrintWriter output;  //Para crear el archivo de texto donde guardar los datos
- 
-int rquad=40; //Radio del quadrado
-int xquad=200;  //Posición X de rect
-int yquad=200;  //Posición Y de rect
-boolean overRect = false; //Estado del mouse si está encima de rect o no
- 
-//Colores del botón
-int red=100;
-int green=100;
-int blue=100;
- 
-boolean status=false; //Estado del color de rect
-//String texto="LED OFF";//Texto del status inicial del LED
- 
-int xlogo=400;//Posición X de la imagen
-int ylogo=50;//Posición Y de la imagen
- 
-int valor;//Valor de la temperatura
+ int valor;//Valor de la temperatura
  
 //Colores esfera temperatura
 float rojo;
