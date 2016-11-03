@@ -59,7 +59,7 @@ float azul;
  
 void setup(){
     output = createWriter("temperatura_datos.txt"); //Creamos el archivo de texto, que es guardado en la carpeta del programa
-  size(1000,600);// Definimos el tamaño de la ventana. 
+  size(1105,600);// Definimos el tamaño de la ventana. 
   b = loadFont("Arial-BoldMT-48.vlw");//definimos tipo de letra para la brujula
   satelite=loadImage("satelite_.png");//se Carga la imagen ("nombre de la imagen y su formato")
   gMapper = new GoogleMapper(mapCenterLat, mapCenterLon, zoomLevel, mapType, anchoMapa, altoMapa);
@@ -79,7 +79,7 @@ void setup(){
 }
 
 void draw(){
-  background(100,100,100);
+  background(255,255,255);
   image(mapa,0,0);
 image(satelite,longitud,latitud,50,50);//se define las caracteristicas de la imagen(nombre de la imagen,cordenadaX,cordenadaY,ancho,largo)
 CanSatLatitud = CanSatLatitud + random(-0.001, 0.002);
@@ -92,11 +92,11 @@ coordenadasX.append(longitud);
 coordenadasY.append(latitud);
 
 //inicia proceso de tempearatura----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-textSize(24);//tamaño del texto
+textSize(20);//tamaño del texto
 fill(#030303);//color del texto
-   text("Temperatura =",250,560);//texto y posicion
-   text(valor, 350, 560);//variable de temperatura y posicion
-   text("ºC",370,560);//texto y posicion
+   text("Temperatura=",968,50);//texto y posicion
+   text(valor,  1048,50);//variable de temperatura y posicion
+   text("ºC",1068,50);//texto y posicion
     
    
       //Escribimos los datos de la temperatura con el tiempo (h/m/s) en el archivo de texto
@@ -116,7 +116,7 @@ fill(#030303);//color del texto
   noStroke();
   fill(rojo,verde,azul);
   ellipseMode(CENTER);
-  ellipse(400,552,20,20);
+  ellipse(1094,43,20,20);
   //termina proceso de temperatura---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //iniciamos proceso de brujula ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //while (myPort.available() > 0) {
