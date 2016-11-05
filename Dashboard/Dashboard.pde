@@ -44,11 +44,15 @@ float CanSatLongitud;
 FloatList coordenadasX;
 FloatList coordenadasY;
 
+//humedad y presion
+int valorP;//Valor de la presión  
+int valorH;//Valor de la humedad relativa y la temperatura 
+//termina humedad y presion
 
 //temperatura
  
 PrintWriter output;  //Para crear el archivo de texto donde guardar los datos
- int valor;//Valor de la temperatura
+ int valor;//3Valor de la temperatura
  
 //Colores esfera temperatura
 float rojo;
@@ -59,6 +63,8 @@ float azul;
  
 void setup(){
     output = createWriter("temperatura_datos.txt"); //Creamos el archivo de texto, que es guardado en la carpeta del programa
+      output = createWriter("Parametros_datos.txt"); //Creamos el archivo de texto, que es guardado en la carpeta del programa
+
   size(1105,600);// Definimos el tamaño de la ventana. 
   b = loadFont("Arial-BoldMT-48.vlw");//definimos tipo de letra para la brujula
   satelite=loadImage("satelite_.png");//se Carga la imagen ("nombre de la imagen y su formato")
@@ -90,6 +96,31 @@ longitud = map(CanSatLongitud, minLongitudCanSatX, maxLongitudCanSatX, 0, anchoM
 
 coordenadasX.append(longitud);
 coordenadasY.append(latitud);
+//inicia proceso de presion y humedad****************************************************************************************************************************************************
+textSize(24);
+fill(#030303);
+ text("Presión =",340,50);
+   text(valorP, 410, 50);
+   text(" hPa",440,50);
+       //Escribimos los datos de la presión con el tiempo (h/m/s) en el archivo de texto
+   output.print(valorP + " hPa     ");
+   output.print(hour( )+":");
+   output.print(minute( )+":");
+   output.println(second( ));
+   output.println("");
+    text("Humedad=",550,50);
+  text(valorH, 635, 50);
+   text("%",655,50);
+     
+   //Escribimos los datos de la temperatura y la humedad con el tiempo (h/m/s) en el archivo de texto
+   output.print(valorH + "%");
+   output.print(hour( )+":");
+   output.print(minute( )+":");
+   output.println(second( ));
+   output.println("");
+    
+//termina proceso de presion y humedad***************************************************************************************************************************************************
+
 
 //inicia proceso de tempearatura----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 textSize(20);//tamaño del texto
